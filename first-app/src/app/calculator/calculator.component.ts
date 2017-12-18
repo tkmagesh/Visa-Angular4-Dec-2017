@@ -3,7 +3,8 @@ import { CalculatorModel } from './CalculatorModel';
 
 @Component({
 	selector : 'app-calculator',
-	templateUrl : 'calculator.component.html'
+	templateUrl : 'calculator.component.html',
+	styleUrls : ['calculator.component.css']
 })
 export class CalculatorComponent{
 
