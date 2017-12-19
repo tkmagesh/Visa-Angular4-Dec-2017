@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UtilsModule } from './utils/utils.module';
 
 import { AppComponent } from './app.component';
 import { BugTrackerComponent } from './bugTracker/bugTracker.component';
@@ -10,23 +11,19 @@ import { BugStorageService } from './bugTracker/services/bugStorage.service';
 
 import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
 
-import { TrimTextPipe } from './bugTracker/pipes/trimText.pipe';
-import { SortPipe } from './bugTracker/pipes/sort.pipe';
-import { ElapsedPipe } from './bugTracker/pipes/elapsed.pipe';
+console.log(UtilsModule);
 
 @NgModule({
   declarations: [
     AppComponent,
     BugTrackerComponent,
     BugStatsComponent,
-    ClosedCountPipe,
-    TrimTextPipe,
-    SortPipe,
-    ElapsedPipe
+    ClosedCountPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    UtilsModule
   ],
   providers: [
   	BugOperationsService,
