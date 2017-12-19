@@ -23,13 +23,7 @@ export class BugTrackerComponent{
 		this.bugOperations.toggle(bug);
 	}
 
-	getClosedCount(){
-		let closedCount = 0;
-		for(let index = 0, count = this.bugs.length; index < count; index++)
-			if (this.bugs[index].isClosed)
-				++closedCount;
-		return closedCount;
-	}
+	
 	onRemoveClosedClick(){
 		this.bugs = this.bugs.filter(bug => !bug.isClosed);
 	}
