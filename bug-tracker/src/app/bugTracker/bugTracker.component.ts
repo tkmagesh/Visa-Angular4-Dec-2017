@@ -10,17 +10,20 @@ export class BugTrackerComponent{
 
 	bugs : IBug[] = [];
 
+	newBugName : string = '';
+
 	constructor(private bugOperations : BugOperationsService){
 		
 	}
 
-	onCreateNewClick(bugName : string){
-		let newBug = this.bugOperations.createNew(bugName);
-		this.bugs.push(newBug);
+	onCreateNewClick(){
+		let newBug = this.bugOperations.createNew(this.newBugName);
+		this.bugs = [...this.bugs, newBug];
 	}
 
-	onBugClick(bug : IBug){
-		this.bugOperations.toggle(bug);
+	onBugClick(bugToToggle : IBug){
+		let toggledBug = this.bugOperations.toggle(bugToToggle);
+		this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
 	}
 
 	

@@ -5,7 +5,8 @@ interface IComparer{
 }
 
 @Pipe({
-	name : 'sort'
+	name : 'sort',
+	pure : true
 })
 export class SortPipe{
 	private getComparerFor(attrName : string) : IComparer{
@@ -22,6 +23,7 @@ export class SortPipe{
 		}
 	}
 	transform(data : any[], attrName : string, isDescending : boolean = false) : any[]{
+		console.log('sort transform triggered');
 		let comparer = this.getComparerFor(attrName);
 		if (isDescending)
 			comparer = this.getDescendingComparerFor(comparer);
