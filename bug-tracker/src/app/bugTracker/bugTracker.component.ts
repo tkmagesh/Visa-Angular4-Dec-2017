@@ -10,14 +10,13 @@ export class BugTrackerComponent{
 
 	bugs : IBug[] = [];
 
-	newBugName : string = '';
+	
 
 	constructor(private bugStorage : BugStorageService){
 		this.bugs = this.bugStorage.getAll();
 	}
 
-	onCreateNewClick(){
-		let newBug = this.bugStorage.addNew(this.newBugName);
+	onNewBugCreated(newBug : IBug){
 		this.bugs = [...this.bugs, newBug];
 	}
 
