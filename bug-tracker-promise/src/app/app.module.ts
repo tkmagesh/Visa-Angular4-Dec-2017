@@ -10,7 +10,7 @@ import { BugEditComponent } from './bugTracker/views/BugEdit.component';
 
 import { BugOperationsService } from './bugTracker/services/bugOperations.service';
 import { BugStorageService } from './bugTracker/services/bugStorage.service';
-
+import { BugServerService } from './bugTracker/services/bugServer.service';
 
 import { ClosedCountPipe } from './bugTracker/pipes/closedCount.pipe';
 
